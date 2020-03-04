@@ -40,7 +40,8 @@ export const getUser =() =>async dispatch => {
 dispatch({type:GET_USER})
 
 try{
-    const response = await api.getUser();
+    const response = await api.getUser(); //배열 -> 미들웨어
+    console.info(response.data);
     dispatch({
     type:GET_USER_SUCCESS,
     payload:response.data
@@ -51,8 +52,6 @@ catch(e){
         type:GET_USER_FAILURE,
         payload:e,
         error: true
-
-
     })
     throw e;
 
@@ -137,8 +136,6 @@ loading:{
     GET_USER:false
 }
 })
-
-
 
 
 

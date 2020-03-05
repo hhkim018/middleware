@@ -3,6 +3,7 @@ import React from 'react'
 
 const Sample = ({loadingPost,loadingUser,post,user}) =>{
 
+    console.info(user)
     return(
 <div>
 <section>
@@ -19,7 +20,7 @@ const Sample = ({loadingPost,loadingUser,post,user}) =>{
 <section>
 <h1>user</h1>
 {loadingUser && 'loading..'}
-{loadingUser&& user && (
+{ user && (
 <ul>{user.map(user=>(<li key={user.id}>
 {user.username} ({user.email})
 </li>
